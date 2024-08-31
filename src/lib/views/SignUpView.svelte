@@ -1,5 +1,6 @@
 <script>
 	import Logo from '$lib/Logo.svelte';
+	import { api, setToken } from '$lib/api.js';
 
 	let name = '';
 	let id = '';
@@ -10,8 +11,12 @@
 
 	let active_signup_button = false;
 
-	function check_id() {
-		is_available = 1;
+	async function check_id() {
+
+		const res = await api.post(`/auth/pre-register/${id}`);
+
+		is_available = res.data.content.exists ? -1 : 1;
+
 		condition_for_signup();
 	}
 	function condition_for_signup() {
@@ -19,6 +24,19 @@
 		active_signup_button =
 			(password != '') & (id != '') & (name != '') & (check_password == password) & is_available;
 	}
+
+	const register = async () => {
+		const res = await api.post('/auth/register', {id, name, password});
+
+		if (res) {
+			if (res.data.error) {
+				alert(res.data.error);
+				return
+			}
+
+			alert('회원가입 성공');
+		}
+	};
 </script>
 
 <svelte:window
@@ -80,7 +98,7 @@
 		disabled={!active_signup_button}
 		class="w-[244px] h-[32px] text-[14px]
          {active_signup_button ? 'bg-[#1A91FF] text-white' : 'bg-[#D9D9D9] text-[#616161]'}
-         
+
          rounded-[10px] my-[27px]"
 	>
 		회원가입
