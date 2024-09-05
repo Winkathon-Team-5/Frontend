@@ -1,3 +1,3 @@
 export async function load({ url }) {
-	return { query: url.searchParams.get('query') };
+  return { query: url.searchParams.get('query') };
 }

@@ -3,47 +3,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
-	h1 {
-		font-size: 36px;
-		@apply font-bold;
-	}
-	h2 {
-		font-size: 32px;
-		@apply font-bold;
-	}
-	h3 {
-		font-size: 24px;
-		@apply font-bold;
-	}
-	h5 {
-		font-size: 18px;
-		@apply font-bold;
-	}
-	h6 {
-		font-size: 16px;
-		@apply font-bold;
-	}
-	ul {
-		@apply list-inside list-disc marker:text-black;
-	}
+  h1 {
+    font-size: 36px;
+    @apply font-bold;
+  }
+  h2 {
+    font-size: 32px;
+    @apply font-bold;
+  }
+  h3 {
+    font-size: 24px;
+    @apply font-bold;
+  }
+  h5 {
+    font-size: 18px;
+    @apply font-bold;
+  }
+  h6 {
+    font-size: 16px;
+    @apply font-bold;
+  }
+  ul {
+    @apply list-inside list-disc marker:text-black;
+  }
 }
 
 * {
-	font-family:
-		'Pretendard Variable',
-		Pretendard,
-		-apple-system,
-		BlinkMacSystemFont,
-		system-ui,
-		Roboto,
-		'Helvetica Neue',
-		'Segoe UI',
-		'Apple SD Gothic Neo',
-		'Noto Sans KR',
-		'Malgun Gothic',
-		'Apple Color Emoji',
-		'Segoe UI Emoji',
-		'Segoe UI Symbol',
-		sans-serif;
+  font-family:
+    'Pretendard Variable',
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    'Helvetica Neue',
+    'Segoe UI',
+    'Apple SD Gothic Neo',
+    'Noto Sans KR',
+    'Malgun Gothic',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    sans-serif;
 }
